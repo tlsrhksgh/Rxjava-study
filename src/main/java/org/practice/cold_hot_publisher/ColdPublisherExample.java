@@ -1,4 +1,4 @@
-package org.practice;
+package org.practice.cold_hot_publisher;
 
 import io.reactivex.Flowable;
 

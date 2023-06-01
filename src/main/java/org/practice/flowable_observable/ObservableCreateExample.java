@@ -1,4 +1,4 @@
-package org.practice;
+package org.practice.flowable_observable;
 
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;

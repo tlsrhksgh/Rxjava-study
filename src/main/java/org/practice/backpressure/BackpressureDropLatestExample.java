@@ -1,4 +1,4 @@
-package org.practice;
+package org.practice.backpressure;
 
 import io.reactivex.BackpressureOverflowStrategy;
 import io.reactivex.Flowable;
