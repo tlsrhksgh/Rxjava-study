@@ -5,20 +5,19 @@ import io.reactivex.schedulers.Schedulers;
 
 import java.util.concurrent.TimeUnit;
 
-public class BackpressureDropExample {
+public class BackpressureLatesetExample {
     public static void main(String[] args) throws InterruptedException{
         Flowable.interval(300L, TimeUnit.MILLISECONDS)
-                .doOnNext(data -> System.out.println("#Interval doOnNext(): " + data))
-                .onBackpressureDrop(dropData -> System.out.println(dropData + " is Drop!!"))
+                .doOnNext(data -> System.out.println("#interval doOnNext()" + data))
+                .onBackpressureLatest()
                 .observeOn(Schedulers.computation(), false, 1)
                 .subscribe(
                         data -> {
                             Thread.sleep(1000L);
-                            System.out.println(data);
+                            System.out.println("onNext(): " + data);
                         },
-                        System.out::println
-                );
+                        error -> System.out.println("Error: " + error));
 
-        Thread.sleep(6000L);
+        Thread.sleep(7000L);
     }
 }
