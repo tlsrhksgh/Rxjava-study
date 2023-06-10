@@ -10,5 +10,6 @@ public class ObservableScanExample {
         Observable.just("a", "b", "c", "d", "e")
                 .scan((x, y) -> "(" + x + ", " + y + ")")
                 .subscribe(System.out::println);
+
     }
 }
